@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DR EMO</title>
+        <meta name="description" content= "The correct prediction of heart disease can prevent life threats, and incorrect prediction can prove to be fatal at the same time. In this paper different machine learning algorithms and deep learning are applied to compare the results and analysis of the UCI Machine Learning Heart Disease dataset. The dataset consists of 14 main attributes usedfor performing the analysis. Various promising results are achieved and are validated using accuracy and confusion matrix. The dataset consists of some irrelevant features which are handled using Isolation Forest, and data are also normalized for getting better results. And how this study can be combined with some multimedia technology like mobile devices is also discussed. Using deep learning approach ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+    <!-----------------------------------------"the style"---------------------------------------------->
+
+	<style>
+
+	@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background:linear-gradient(rgba(98, 53, 156, 0.178),rgba(87, 59, 1, 0.192)),url(patientHomePics/banner-bg.png) no-repeat;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        color: white;
+    }
+
+    .quiz-container {
+        background-color: rgba(36, 5, 54, 0.541);
+        border-radius: 10px;
+        box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+        width: 600px;
+        overflow: hidden;
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+
+    .quiz-header {
+        padding: 4rem;
+    }
+
+    h2 {
+        padding: 1rem;
+        text-align: center;
+        margin: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    ul li {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+
+    ul li label {
+        cursor: pointer;
+    }
+
+    ul li label:hover{
+        color: rgb(202, 5, 202);
+    }
+
+    button {
+        background-color: #6f17aa;
+        color: #fff;
+        border: none;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-family: inherit;
+        padding: 1.3rem;
+        font-weight: 500;
+    }
+
+    input[type="radio"]{
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+        font: inherit;
+        border: 0.15em ;
+        border-radius: 50%;
+        transform: translateY(-0.075em);
+    }
+
+    input[type="radio"]{
+        display: inline-flex;
+        place-content: center;
+    }
+
+    input[type="radio"]::before{
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em rgb(81, 60, 85);
+        background-color: white;
+    }
+
+    input[type="radio"]:checked::before{
+        transform: scale(1);
+    }
+
+    input[type="radio"]:focus{
+        outline: max(2px, 0.15em) ;
+        outline-offset: max(2px, 0.15em);
+    }
+
+    button:hover {
+        background-color: #664b6d;
+    }
+
+    button:focus {
+        outline: none;
+        background-color: #8440b1;
+    }
+    
+    .image{
+        width: 480px;
+        opacity: 1;
+        animation: floatImage 4s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+    
+    .note{
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        font-size: 1.5rem;
+        color: rgb(236, 217, 245);
+        font-weight: 400;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .note span{
+        font-weight: 600;
+        color: rgb(207, 157, 17);
+    }
+    
+    @media (max-width:991px){
+        html{
+            font-size: 55%;
+        }
+
+        .image{
+            display: none;
+        }
+
+        .quiz-container{
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 60px;
+            font-size: 3rem;
+        }
+
+        ul li{
+            font-size: 2.5rem;
+        }
+
+        button{
+            font-size: 2rem;
+        }
+    }
+    
+    @keyframes floatImage{
+        0%{
+            transform: translateY(0);
+        }
+
+        50%{
+            transform: translateY(-24px);
+        }
+
+        100%{
+            transform: translateY(0);
+        }
+    }
+
+	</style>
+
+
+	<!----------------------------------------------------"html body"------------------------------------------------------>
+
+    <body>
+
+        <!-----the note of the form instructions----->
+
+        <div class="note">
+			<p>Hello,</p>
+			<p>Please Answer All Questions Correctly</p>
+			<p>The Form Contains <span>" 11 "</span> Questions</p>
+			<p><span>any Wrong Answer Will Distract DR EMO Result</span></p>
+		</div>
+
+        <!-----the quiz container------>
+
+		<div class="quiz-container" id="quiz">
+			<div class="quiz-header">
+				<h2 id="question">Question Text</h2>
+				<ul id="place"></ul>
+			</div>
+           
+			<button id="submit">Next</button>
+		</div>
+
+        <!--------quiz img--------->
+
+        <div class="image">
+            <img src="./patientHomePics/form.svg">
+        </div>
+
+        <!---------------------------------------------------"JS"------------------------------------------------>
+
+		<script>
+
+	    const quizData = [
+        {
+            id: 1,
+            question: "Are You a Chain smoker ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 2,
+            question: "Do You Consumes other tobacco products ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 3,
+            question: "Do You Have a High BP ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 4,
+            question: "Do You Have Obese ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 5,
+            question: "Do You Have Diabetes ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 6,
+            question: "Do You Have Metabolic syndrome ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 7,
+            question: "Are You Using stimulant drugs ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 8,
+            question: "Do You Have Family history ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 9,
+            question: "Do You Have History of preeclampsia ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 10,
+            question: "Do You Have CABG History ?",
+            a: "YES",
+            b: "NO",
+        },
+
+        {
+            id: 11,
+            question: "Do You Have Respiratory ?",
+            a: "YES",
+            b: "NO",
+        },
+    ];
+    
+    const quiz = document.getElementById('quiz');
+    const answerEls = document.querySelectorAll('.answer');
+    const questionEl = document.getElementById('question');
+    const quizHeader = document.getElementById('quiz-header');
+    const place = document.getElementById('place');
+    const a_text = document.getElementById('a_text');
+    const b_text = document.getElementById('b_text');
+    const submitBtn = document.getElementById('submit');
+
+    let submitBtnClicked
+    let currentQuiz = 0;
+    let score = 0;
+
+    loadQuiz();
+
+    function loadQuiz () {
+       deselectAnswers();
+             const currentQuizData = quizData[ currentQuiz ];
+             const binaryOptions = `<li>
+                            <input type="radio" name="answer" id="a" class="answer" required />
+                            <label for="a" id="a_text">${ currentQuizData.a }</label>
+                           </li>
+                           <li>
+                            <input type="radio" name="answer" id="b" class="answer" required />
+                            <label for="b" id="b_text">${ currentQuizData.b }</label>
+                           </li>`;
+             questionEl.innerText = currentQuizData.question;
+            if (currentQuizData.id === 1 || currentQuizData.id === 2 || currentQuizData.id === 3 || currentQuizData.id === 4 || currentQuizData.id === 5 || currentQuizData.id === 6 || currentQuizData.id === 7|| currentQuizData.id === 8 || currentQuizData.id === 9 || currentQuizData.id === 10  || currentQuizData.id === 11 ) {
+                    place.innerHTML = binaryOptions;
+            } 
+    }
+
+    function deselectAnswers () {
+        answerEls.forEach(answerEl => answerEl.checked = false);
+    }
+    
+    place.addEventListener('click', () => {
+        submitBtn.disabled = false;
+    
+    })
+    
+    submitBtn.addEventListener('click', () => {
+        score++;
+        currentQuiz++;
+        if (currentQuiz < quizData.length) {
+            loadQuiz();
+        submitBtn.disabled = true;
+        }
+         else {
+            quiz.innerHTML = `
+               <h2>You answered ${ score }/${ quizData.length } questions </h2>
+               <a href="./Result.html" target="_blank" " ><button >Submit</button></a>
+               `;
+        }
+    });
+    
+	</script>
+
+	</body>
+</html>

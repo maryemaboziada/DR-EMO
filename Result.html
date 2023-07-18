@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DR EMO</title>
+        <meta name="description"
+            content="The correct prediction of heart disease can prevent life threats, and incorrect prediction can prove to be fatal at the same time. In this paper different machine learning algorithms and deep learning are applied to compare the results and analysis of the UCI Machine Learning Heart Disease dataset. The dataset consists of 14 main attributes usedfor performing the analysis. Various promising results are achieved and are validated using accuracy and confusion matrix. The dataset consists of some irrelevant features which are handled using Isolation Forest, and data are also normalized for getting better results. And how this study can be combined with some multimedia technology like mobile devices is also discussed. Using deep learning approach ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <!-----------------------------------------"the style"---------------------------------------------->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgba(98, 53, 156, 0.178), rgba(87, 59, 1, 0.192)), url(patientHomePics/banner-bg.png) no-repeat;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            color: white;
+        }
+
+        .name {
+            font-size: 60px;
+            text-transform: uppercase;
+            color: rgb(194, 113, 20);
+            position: absolute;
+            font-style: oblique;
+            font-weight: 600;
+            display: flex;
+            padding-left: 140px;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            margin-top: 150px;
+        }
+
+        .name span {
+            color: rgb(201, 62, 62);
+            text-decoration: dotted;
+            font-size: 40px;
+        }
+
+        .result {
+            font-size: 20px;
+            text-transform: uppercase;
+            color: rgb(24, 18, 18);
+            position: absolute;
+            font-style: oblique;
+            font-weight: 600;
+            display: flex;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            margin-top: 300px;
+            margin-left: 120px;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.274);
+            border-radius: 15px;
+        }
+
+        .result span {
+            color: rgb(74, 13, 102);
+            font-size: 25px;
+        }
+
+        .image {
+            width: 300px;
+            float: right;
+            padding-top: 50px;
+            padding-left: 45%;
+            opacity: 1;
+            animation: floatImage 4s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatImage {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-24px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width:991px) {
+            html {
+                font-size: 55%;
+            }
+
+            .image {
+                display: none;
+            }
+
+            .name {
+                width: 50%;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+            }
+
+            .result {
+                width: 50%;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+                display: block;
+            }
+        }
+    </style>
+
+    <!----------------------------------------------------"html body"------------------------------------------------------>
+
+    <body>
+
+        <div class="name">
+            <p> DR EMO <span> Result </span> </p>
+        </div>
+
+        <!-------result qoute------>
+
+        <div class="result">
+            <p> Patient is <span>Uninfected</span> </p>
+            <br>
+            <p>DR EMO Wishs You All Long Healthy Life</p>
+        </div>
+
+        <!--------result img--------->
+
+        <div class="image">
+            <img src="./patientHomePics/result.svg">
+        </div>
+
+    </body>
+
+</html>

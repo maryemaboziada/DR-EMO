@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Table</title>
+
+    <link rel="stylesheet" type="text/css" href="table.css">
+
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        font-family: 'Poppins', sans-serif;
+
+        box-sizing: border-box;
+
+    }
+
+    body {
+
+        height: 100vh;
+
+        display: grid;
+
+        place-items: center;
+
+        background:  url(doctorHomePics/banner-bg.png) no-repeat fixed;
+
+        background-size: 100% 100%;
+
+        background-repeat: no-repeat;
+
+        font-family: 'Poppins', sans-serif;
+
+        font-weight: 500;
+
+    }
+
+    h1{
+        color: rgb(209, 166, 250);
+
+        font-style: oblique;
+
+        margin-top: 40px;
+
+        font-weight: 600;
+    }
+
+    table {
+
+        width: 60%;
+
+        box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
+
+        margin-top: 30px;
+
+        margin-bottom: 30px;
+
+        border-radius: 15px;
+
+    }
+
+    table,
+    td,
+    th {
+
+        padding: 20px;
+
+        border: 1px solid rgba(211, 211, 211, 0.308);
+
+        outline: none;
+
+        border-collapse: collapse;
+
+        text-align: center;
+
+        cursor: pointer;
+
+    }
+
+    td {
+
+        font-size: 18px;
+
+    }
+
+    th {
+
+        background-color: rgb(255, 255, 255);
+
+        color: rgb(0, 0, 0);
+
+    }
+
+    .one{
+        color: rgb(255, 255, 255);
+        background-color: rgb(189, 117, 23);
+    }
+
+    .one:hover{
+        background-color: rgb(150, 104, 44);
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+    }
+
+    .two{
+        color: white;
+        background-color: rgb(119, 111, 111);
+    }
+
+    .two:hover{
+        background-color: rgb(163, 125, 125);
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+    }
+
+
+    td:nth-child(odd) {
+        background-color: rgb(151, 102, 62);
+        color: white;
+
+    }
+
+    td:nth-child(odd):hover {
+
+        background-color: rgb(247, 179, 90);;
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+
+    }
+
+    td:nth-child(even) {
+
+        background-color: rgb(83, 82, 78);
+        color: white;
+
+    }
+
+    td:nth-child(even):hover {
+
+        background-color: rgb(35, 34, 36);;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+
+
+    }
+
+    @media (max-width:991px){
+        table{
+            width: 100%;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<body>
+
+</body>
+     
+    <h1>Patients Data</h1>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Samir Mahmoud Abdullah Karam</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Heart Attacks</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Uninficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Chain smoker</td>
+
+            <td>NO</td>
+
+            <td>Consumes other tobacco products</td>
+
+            <td>YES</td>
+
+            <td>>High BP</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Obese</td>
+
+            <td>NO</td>
+
+            <td>Diabetes</td>
+
+            <td>YES</td>
+
+            <td>Metabolic syndrome</td>
+
+            <td>YES</td>
+
+        </tr>
+
+        <tr>
+
+            <td>stimulant drugs</td>
+
+            <td>YES</td>
+
+            <td>Family history</td>
+
+            <td>NO</td>
+
+            <td>History of preeclampsia</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CABG History</td>
+
+            <td>YES</td>
+
+            <td>Respiratory</td>
+
+            <td>NO</td>
+
+        </tr>
+
+    </table>
+
+    <!------------------------------------------------------second table------------------------------------------------------>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Mahmoud Ahmed Abdo Saad</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Heart Attacks</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Uninficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Chain smoker</td>
+
+            <td>NO</td>
+
+            <td>Consumes other tobacco products</td>
+
+            <td>YES</td>
+
+            <td>>High BP</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Obese</td>
+
+            <td>NO</td>
+
+            <td>Diabetes</td>
+
+            <td>YES</td>
+
+            <td>Metabolic syndrome</td>
+
+            <td>YES</td>
+
+        </tr>
+
+        <tr>
+
+            <td>stimulant drugs</td>
+
+            <td>YES</td>
+
+            <td>Family history</td>
+
+            <td>NO</td>
+
+            <td>History of preeclampsia</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CABG History</td>
+
+            <td>YES</td>
+
+            <td>Respiratory</td>
+
+            <td>NO</td>
+
+        </tr>
+
+    </table>
+
+
+    <!------------------------------------------------------third table------------------------------------------------------>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Sama Amir Mohsn Sedik</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Heart Attacks</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Inficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Chain smoker</td>
+
+            <td>NO</td>
+
+            <td>Consumes other tobacco products</td>
+
+            <td>YES</td>
+
+            <td>>High BP</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Obese</td>
+
+            <td>NO</td>
+
+            <td>Diabetes</td>
+
+            <td>YES</td>
+
+            <td>Metabolic syndrome</td>
+
+            <td>YES</td>
+
+        </tr>
+
+        <tr>
+
+            <td>stimulant drugs</td>
+
+            <td>YES</td>
+
+            <td>Family history</td>
+
+            <td>NO</td>
+
+            <td>History of preeclampsia</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CABG History</td>
+
+            <td>YES</td>
+
+            <td>Respiratory</td>
+
+            <td>NO</td>
+
+        </tr>
+
+    </table>
+
+    <!------------------------------------------------------forth table------------------------------------------------------>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Mahmoud Fadl Said Hassan</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Heart Attacks</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Uninficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Chain smoker</td>
+
+            <td>NO</td>
+
+            <td>Consumes other tobacco products</td>
+
+            <td>YES</td>
+
+            <td>>High BP</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Obese</td>
+
+            <td>NO</td>
+
+            <td>Diabetes</td>
+
+            <td>YES</td>
+
+            <td>Metabolic syndrome</td>
+
+            <td>YES</td>
+
+        </tr>
+
+        <tr>
+
+            <td>stimulant drugs</td>
+
+            <td>YES</td>
+
+            <td>Family history</td>
+
+            <td>NO</td>
+
+            <td>History of preeclampsia</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CABG History</td>
+
+            <td>YES</td>
+
+            <td>Respiratory</td>
+
+            <td>NO</td>
+
+        </tr>
+
+    </table>
+
+
+    <!------------------------------------------------------fifth table------------------------------------------------------>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two">Ahmed Abdo Saad Ali</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Heart Attacks</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Inficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Chain smoker</td>
+
+            <td>NO</td>
+
+            <td>Consumes other tobacco products</td>
+
+            <td>YES</td>
+
+            <td>>High BP</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Obese</td>
+
+            <td>NO</td>
+
+            <td>Diabetes</td>
+
+            <td>YES</td>
+
+            <td>Metabolic syndrome</td>
+
+            <td>YES</td>
+
+        </tr>
+
+        <tr>
+
+            <td>stimulant drugs</td>
+
+            <td>YES</td>
+
+            <td>Family history</td>
+
+            <td>NO</td>
+
+            <td>History of preeclampsia</td>
+
+            <td>NO</td>
+
+        </tr>
+
+        <tr>
+
+            <td>CABG History</td>
+
+            <td>YES</td>
+
+            <td>Respiratory</td>
+
+            <td>NO</td>
+
+        </tr>
+
+    </table>
+
+
+</body>
+
+</html>
+

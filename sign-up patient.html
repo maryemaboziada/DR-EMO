@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>DR EMO</title>
+        <meta name="description" content= "The correct prediction of heart disease can prevent life threats, and incorrect prediction can prove to be fatal at the same time. In this paper different machine learning algorithms and deep learning are applied to compare the results and analysis of the UCI Machine Learning Heart Disease dataset. The dataset consists of 14 main attributes usedfor performing the analysis. Various promising results are achieved and are validated using accuracy and confusion matrix. The dataset consists of some irrelevant features which are handled using Isolation Forest, and data are also normalized for getting better results. And how this study can be combined with some multimedia technology like mobile devices is also discussed. Using deep learning approach ">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="sign.css">
+        <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        crossorigin="anonymous"
+        >
+    </head>
+
+    <!-------------------------------------------style---------------------------------------------->
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+        body{
+            font-family:'Poppins' , sans-serif ;
+            }
+            
+            *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+            }
+            
+            body{
+            display: block;
+            height: 100vh;
+            padding: 10px;
+            background:  linear-gradient(rgba(243, 176, 176, 0),rgba(0, 0, 0, 0)), url(signupPics/banner-bg.png);
+            position: relative;
+            }
+            
+            .image{
+            width: 100%;
+            transition:  1.1s .4s ease-in-out;
+            display: flex;
+            
+            }
+            
+            .container{
+            max-width: 700px;
+            width: 100%;
+            background:linear-gradient(135deg , rgba(26, 1, 43, 0) , rgba(0, 0, 0, 0.144));
+            padding: 15px 15px;
+            border-radius: 16px;
+            background-size: cover;
+            position:absolute;
+            right: 70px;
+            justify-content: center;
+            color: rgb(239, 227, 250);
+            font-weight: 500;
+            align-items: center;
+            display: inline-block;
+            margin-top: 60px;
+            }
+            
+            .content{
+            max-width: 90px;
+            }
+            
+            .content h3{
+            font-size: 60px;
+            text-transform: uppercase;
+            color: rgb(48, 9, 94);
+            padding: 40px 220px;
+            position: absolute;
+            font-style: oblique;
+            font-weight: 600;
+            }
+            
+            .title span{
+            font-style: oblique;
+            color: rgb(187, 130, 7);
+            }
+            
+            .content span{
+            font-style: oblique;
+            color: rgb(187, 130, 7);
+            }
+            
+            .container .title{
+            font-size: 30px;
+            font-weight: 600;
+            position: relative;
+            color: rgb(248, 245, 252);
+            margin-left: 110px;
+            margin-bottom: 10px;
+            }
+            
+            .container form .userDetails{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 0 12px; /*kkk*/
+            }
+            
+            form .userDetails .inputBox{
+            margin-bottom: 15px;
+            width: 60%;
+            border-radius: 33px;
+            margin-left: 150px;
+            }
+            
+            .userDetails .inputBox input{
+            height: 45px;
+            width: 100%;
+            outline: none;
+            border-radius: 35px;
+            border: none;
+            padding-left: 15px;
+            font-size: 16px;
+            border-bottom-width: 2px;
+            transition: all 0.3s ease;
+            background-color: rgb(207, 204, 204);
+            display: flex;
+            }
+            
+            .userDetails .inputBox input:placeholder-shown{
+            font-weight: 600;
+            color: #444;
+            }
+            
+            .userDetails .inputBox input:focus,
+            .userDetails .inputBox input:valid{
+            border-color: rgb(2, 22, 31);
+            }
+            
+            form .button{
+                height: 40px;
+                margin: 15px 0;
+            }
+            
+            form .button input{
+                height: 100%;
+                width: 60%;
+                outline: none;
+                color: rgb(220, 207, 238);
+                border: none;
+                font-size: 18px;
+                font-weight: 500;
+                border-radius: 15px;
+                letter-spacing: 1px;
+                background: linear-gradient(135deg , rgba(68, 13, 104, 0.589) , rgba(61, 17, 102, 0.767));
+                margin-left: 150px;
+            }
+            
+            form .button input:hover{
+                background: linear-gradient(-135deg , rgb(50, 26, 88) , rgb(79, 16, 131));
+            }
+            
+            
+            @media(max-width:990px){
+            .image{
+                display: none;
+            }
+
+            .container{
+                display: block;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            .content h3{
+                display: none;
+            }
+
+            .title{
+                display: none;
+            }
+        }
+
+    </style>
+   
+
+    <form>
+            
+                <div class="content">
+                        <h3>DR <span>EMO</span></h3>
+                </div>
+
+                <div class="container">
+
+                    <div class="title">Hello <span>Patient</span>,  Let's Get Started </div> 
+
+                    <form action="-">
+
+                        <div class="userDetails">
+                            
+                            <div class="inputBox">
+                                <input type="email" id="email" name="email" placeholder="Email" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text" id="firstName" name="firstName" placeholder="Fullname" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="password" id="Password" name="Password" placeholder="Password" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="password" id="con_password" name="con_password" placeholder="Confirm Password" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text"  id="birthDate" name="birthDate" placeholder="dd / mm / yyyy" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text" id="address" name="address" placeholder="Address" >
+                            </div>
+
+                            <div class="inputBox">
+                                <input type="text" id="Gender" name="Gender" placeholder="Gender" >
+                            </div>
+                        
+                        </div>
+
+                        <div class="button">
+                          <a href="./patient-home.html"> <input type="submit" value="Register" > </a>
+                        </div>
+
+                    </form>  
+
+                </div>
+
+                <div class="image">
+                    <img src="./signupPics/signupDOC.svg">
+                </div>
+            
+        </form>  
+    
+</html>

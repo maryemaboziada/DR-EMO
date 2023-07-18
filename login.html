@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <title>DR EMO</title>
+        <meta name="description" content= "The correct prediction of heart disease can prevent life threats, and incorrect prediction can prove to be fatal at the same time. In this paper different machine learning algorithms and deep learning are applied to compare the results and analysis of the UCI Machine Learning Heart Disease dataset. The dataset consists of 14 main attributes usedfor performing the analysis. Various promising results are achieved and are validated using accuracy and confusion matrix. The dataset consists of some irrelevant features which are handled using Isolation Forest, and data are also normalized for getting better results. And how this study can be combined with some multimedia technology like mobile devices is also discussed. Using deep learning approach ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        crossorigin="anonymous"
+        >
+    </head>
+
+    <!-------------------------------------the style--------------------------------------------->
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, input{
+            font-family:'Poppins' , sans-serif ;
+        }
+        
+        .container{
+            position: relative;
+            width: 100%;
+            background:linear-gradient(rgba(90, 34, 163, 0.178),rgba(170, 119, 9, 0.192)),url(loginPics/banner-bg.png) no-repeat;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .forms-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .container::before{
+            content: '';
+            position: absolute;
+            height: 2000px;
+            width: 2000px;
+            top: -10%;
+            right: 48%;
+            background-image: linear-gradient(-45deg, rgb(37, 22, 2) 0%,rgba(173, 128, 42, 0.856) 100%);
+            border-radius: 50%;
+            transform: translateX(50%);
+        }
+        
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5rem;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+        
+        .title{
+            font-size: 2.2rem;
+            color: rgb(66, 10, 119);
+            margin-bottom: 10px;
+        }
+        
+        .input-field{
+            max-width: 300px;
+            width: 100%;
+            height: 55px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            border-radius: 55px;
+            display: grid;
+            grid-template-columns: 15% 85%;
+            padding: 0 0.4rem;
+            position: relative;
+        }
+        
+        .input-field i{
+            text-align: center;
+            line-height: 55px;
+            color: #9395f1;
+            font-size: 1.5rem;
+        }
+        
+        .input-field input{
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 1;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        .input-field input:placeholder-shown{
+            color: #aaa;
+            font-weight: 500;
+        }
+        
+        .btn{
+            width: 150px;
+            height: 49px;
+            outline: none;
+            border: none;
+            border-radius: 48px;
+            background-color: rgb(113, 52, 226);
+            text-transform: uppercase;
+            color: rgb(255, 250, 250);
+            font-weight: 600;
+            margin: 10px 0;
+            transition: all .5s;
+        }
+        
+        .btn:hover{
+            background-color: rgb(33, 12, 61);
+            color: white;
+        }
+        
+        .signin{
+            position: absolute ;
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: 1fr;
+            z-index: 5;
+        }
+        
+        form.sign-in-form{
+            z-index: 2;
+        } 
+        
+        form.sign-up-form{
+            z-index: 1;
+            opacity: 0;
+        }
+        
+        .image{
+            width: 100%;
+            transition:  1.1s .4s ease-in-out;
+        }
+        
+        .panels-container{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 150px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .panel{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .left-panel{
+            padding: 3rem 17% 2rem 12%;
+        }
+        
+        .panel .content{
+            color: rgb(255, 255, 255);
+            transition: .9s .6s ease-in-out;
+        }
+        
+        .panel h3{
+            font-weight: 600;
+            line-height: 1;
+            font-size: 1.5rem;
+        }
+        
+        .btn.transparent{
+            margin-top: 10px;
+            background: none;
+            border: 2px solid rgb(104, 104, 252);
+            width: 130px;
+            height: 41px;
+            font-weight: 600;
+            font-size: .8rem;
+            color: white;
+        }
+        
+        .btn.transparent:hover{
+            background: rgba(119, 109, 109, 0.644);
+            transition: .7s;
+        }
+        
+        .btn.transparent a{
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: .8rem;
+        }
+        
+        .container.sign-up-mode .left-panel .image,
+        .container.sign-up-mode .left-panel .content{
+            transform: translate(-800px);
+        }
+        
+        @media(max-width:991){
+            .image{
+                display: none;
+            }
+
+            .panels-container{
+                display: none;
+            }
+
+            .signin{
+                width: 100%;
+            }
+        }
+
+    </style>
+
+    <!--------------------------------------------------body-------------------------------------------------->
+
+    <body>
+
+        <div class="container">
+
+            <div class="forms-container">
+
+                <!--sign in form-->
+
+                <div class="signin">
+
+                    <form action="-" class="sign-in-form">
+
+                        <h2 class="title">Sign In</h2>
+
+                        <div class="input-field">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Password" required>
+                        </div>
+
+                        <input type="submit" class="btn solid" value="login">
+                        
+                    </form>
+
+                </div>
+
+                <!--panels-->
+
+                <div class="panels-container">
+
+                    <!--left panel side-->
+
+                    <div class="panel left-panel">
+
+                        <div class="content">
+                            <h3>New Here?</h3>
+                            <button class="btn transparent" id="sign-up-button"><a href="./sign-up doctor.html"target="_blank" >Doctor</a></button>
+                            <button class="btn transparent" id="sign-up-button"><a href="./sign-up patient.html" target="_blank">Patient</a></button>
+                        </div>
+
+                        <img src="./loginPics/login-img.svg" class="image">
+
+                    </div>
+
+                </div> 
+                   
+        </div>  
+    </body>
+
+
+
+    

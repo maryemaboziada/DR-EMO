@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/fontawesome.min.js">
+        <title>DR EMO</title>
+        <meta name="description" content= "The correct prediction of heart disease can prevent life threats, and incorrect prediction can prove to be fatal at the same time. In this paper different machine learning algorithms and deep learning are applied to compare the results and analysis of the UCI Machine Learning Heart Disease dataset. The dataset consists of 14 main attributes usedfor performing the analysis. Various promising results are achieved and are validated using accuracy and confusion matrix. The dataset consists of some irrelevant features which are handled using Isolation Forest, and data are also normalized for getting better results. And how this study can be combined with some multimedia technology like mobile devices is also discussed. Using deep learning approach ">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <!-----------------------------------------style------------------------------------------>
+
+    <style>
+
+        :root{
+            --main-color:rgb(122, 102, 71);
+            --black:#13131a4f;
+            --bg:rgb(8, 1, 10);
+            border: 1rem solid rgb(8, 1, 10);
+        }
+
+        *{
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 9rem;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar{
+            width: .8rem;
+        }
+
+        html::-webkit-scrollbar-track{
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb{
+            background: rgb(255, 255, 255);
+            border-radius: 5rem;
+        }
+
+        body{
+            background: var(--bg);
+        }
+
+        section{
+            padding: 2rem 7%;
+        }
+
+        .header{
+            background:rgba(122, 3, 106, 0);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 7%;
+            border-bottom: var(border);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .header .logo {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(128, 101, 68);
+            letter-spacing: .5rem;
+        }
+
+        .header .logo span{
+            font-style: oblique;
+            color: blueviolet;
+            font-weight: 600;
+        }
+
+        .header .navbar a{
+            margin: 0 1rem;
+            font-size: 2rem;
+            color: rgb(241, 194, 149);
+            display:none;
+        }
+
+        .header .navbar a:hover{
+            color: var(--main-color);
+            border-bottom: .1rem solid var(--main-color);
+            padding-bottom: .5rem;
+        }
+
+        .header .icons div{
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-size: 2.5rem;
+            margin-left: 2rem;
+        }
+
+        .header .icons div:hover{
+            color: var(--main-color);
+        }
+
+        #menu-btn{
+            display: none;
+        }
+
+        .home{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: url(patientHomePics/banner-bg.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+        }
+
+        .home .content{
+            max-width: 60rem;
+        }
+
+        .home .content h3{
+            font-size: 6rem;
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+        }
+
+        .home .content p{
+            font-size: 3rem;
+            font-weight: lighter;
+            line-height: 1.8;
+            padding: 1rem 0;
+            color: rgb(202, 196, 196);
+        }
+
+        .btn{
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .9rem 3rem;
+            font-size: 1.7rem;
+            color: rgb(189, 190, 192);
+            background: var(--main-color);
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover{
+            letter-spacing: .2rem;
+        }
+
+        .home-img{
+            width: 480px;
+            margin-right: -20;
+            margin-left: 80px;
+            opacity: 1;
+            animation: floatImage 4s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .heading{
+            text-align: center;
+            color: rgb(148, 143, 143);
+            text-transform: uppercase;
+            padding-bottom: 3.5rem;
+            font-size: 4rem;
+        }
+
+        .heading span{
+            color: var(--main-color);
+            text-transform: uppercase;
+        }
+
+        .about .row{
+            display: flex;
+            align-items: center;
+            background: rgba(122, 89, 18, 0.966);
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 5px;
+        }
+
+        .about .row .image{
+            flex: 1 1 45rem;
+        }
+
+        .about .row .image img{
+            padding-left: 90px;
+            animation: floatImg 4s ease-in-out infinite;
+            animation-delay: 2s;
+            
+        }
+
+        .about .row .content{
+            flex: 1 1 45rem;
+            padding: 2rem;
+        }
+
+        .about .row .content h3{
+            font-size: 3rem;
+            color: rgb(255, 240, 240);
+        }
+
+        .about .row .content p{
+            font-size: 1.6rem;
+            color: rgb(245, 216, 216);
+            padding: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .diseases .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 1.5rem;
+        }
+
+        .diseases .box-container .box{
+            padding: 5rem;
+            text-align: center;
+            border: var(--border);
+            border-radius: 5px;
+        }
+
+        .diseases .box-container .box img{
+            height: 10rem;
+        }
+
+        .diseases .box-container .box h3{
+            color: rgb(29, 98, 126);
+            font-size: 2rem;
+            padding: 1rem 0;
+        }
+
+        .diseases .box-container .box .proport{
+            color: rgb(255, 255, 255);
+            font-size: 2rem;
+            padding: .5rem 0;
+        }
+
+        .diseases .box-container .box .proport span{
+            color: rgb(236, 78, 78);
+            font-size: 2.5rem;
+            padding: .5rem 0;  
+        }
+
+        .diseases .box-container .box .proport span:hover{
+            color: black;
+        }
+
+        .diseases .box-container .box:hover{
+            background: url(patientHomePics/banner-bg.png) no-repeat;
+        }
+
+        .diseases .box-container .box:hover >*{
+            color: rgb(252, 234, 255);
+        }
+
+        .contact .row{
+            display: flex;
+            align-items: center;
+            background: rgba(122, 89, 18, 0);
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 5px;
+        }
+
+        .contact .row .image{
+            flex: 1 1 45rem;
+        }
+
+        .row .content{
+            flex: 1 1 45rem;
+            padding: 2rem;
+        }
+
+        .contact .row .content h3{
+            font-size: 3rem;
+            color: rgb(255, 240, 240);
+        }
+
+        .contact .row .content p{
+            font-size: 1.6rem;
+            color: rgb(245, 216, 216);
+            padding: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .footer{
+            background: url(patientHomePics/footer-bg.png) no-repeat;
+            text-align: center;
+            color: rgb(221, 188, 146);
+        }
+
+        @media (max-width:991px){
+            html{
+                font-size: 55%;
+            }
+
+            .header{
+                padding: 1.5rem 2rem;
+            }
+
+            section{
+                padding: 2rem ;
+            }
+        }
+
+        @media (max-width:991px){
+            #menu-btn{
+                display: none;
+            }
+
+            .header .navbar{
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                background: rgba(211, 162, 226, 0.096);
+                width: 30rem;
+            }
+
+            .header .navbar.active{
+                right: 0;
+            }
+
+            .header .navbar a{
+                color: rgb(128, 150, 197);
+                display: block;
+                margin: 1.5rem;
+                padding: .5rem;
+                font-size: 2rem;
+            }
+
+            .home{
+                background-position: left;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .home .content h3{
+                font-size: 4.5rem;
+            }
+
+            .home .content p{
+                font-size: 2rem;
+            }
+
+            .home-img{
+                display: none;
+            }
+        }
+
+        @keyframes floatImage{
+            0%{
+                transform: translateY(0);
+            }
+
+            50%{
+                transform: translateY(-24px);
+            }
+
+            100%{
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatImg{
+            0%{
+                transform: translateY(0);
+            }
+
+            50%{
+                transform: translatex(-24px);
+            }
+
+            100%{
+                transform: translateY(0);
+            }
+        }
+        
+    </style>
+
+    <!--------------------------------------------------the body-------------------------------------->
+
+    <body>
+
+        <!----------------header start------------------->
+
+        <header class="header">
+
+            <nav class="navbar">
+                <a href="main-home.html">Home</a>
+                <a href="login.html">login</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"><img src="pics/more.png"></div>
+            </div>
+
+        </header>
+
+        <!-------------header ends------------------->
+
+        <!--------------home section start------------------->
+
+        <section class="home" id="home">
+
+            <div class="content">
+                <h3>DR Emo</h3>
+                <p>Doctor In Your Pocket</p>
+                <a  href="./patient-Personal.html" class="btn" target="_blank">Personal Information</a>
+                <a  href="./main-home.html" class="btn" target="_blank" style="display: flex;  width:fit-content; background-color:rgb(156, 73, 73);">Log Out</a>
+            </div>
+
+            <div class="home-img">
+                <img src="./patientHomePics/welcome.svg">
+            </div>
+
+        </section>
+
+        <!------------home section ends----------------->
+
+        <!--------------diseases section start------------------->
+
+        <section class="diseases" id="diseases">
+            <h1 class="heading"><span>Diseases</span></h1>
+
+            <div class="box-container">
+
+                <div class="box">
+                    <img src="./patientHomePics/heart .png">
+                    <h3>Heart Attack</h3>
+
+                    <div class="proport">Accuracy up to <span>95%</span></div>
+
+                    <a href="./heart-Attack.html" class="btn">Check</a>
+                </div>
+
+                <div class="box">
+                    <img src="./patientHomePics/cancer.png">
+                    <h3>Cancer</h3>
+
+                    <div class="proport">Accuracy up to <span>96%</span></div>
+
+                    <a href="./cancer.html" class="btn">Check</a>
+                </div>
+
+                <div class="box">
+                    <img src="./patientHomePics/report.png">
+                    <h3>Reports</h3>
+
+                    <div class="proport">Show Old Reports</div>
+
+                    <a href="./cancer-Report.html" class="btn">Show</a> 
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-------------diseases section ends------------------------>
+
+        <!-------------about section start------------------>
+
+        <section class="about" id="about">
+            <h1 class="heading"><span>about</span> us </h1>
+
+            <div class="row">
+
+               <div class="image">
+                <img src="./patientHomePics/about.png">
+               </div>
+
+               <div class="content">
+                   <h3>who is DR EMO?</h3>
+                   <p>Simply DR EMO is a Machine learning model that takes your medical data and shows you the expected result.</p>
+                   <p>it was trained in real medical data and works very accurately to ensure medical honesty in the results. </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-----------------about section ends---------------------------->
+        
+        <!-----------------contact section start------------------------->
+
+        <section class="contact" id="contact">
+
+            <h1 class="heading"><span>Contact</span> us </h1>
+
+            <div class="row">
+
+               <div class="content">
+                   <h3>October 6 university hospital</h3>
+                   <p>Tel : (+2)383 55 277/88/9/5/6</p>
+                   <p>Fax : (+2)383 53 161</p>
+                   <a href="http://www.osuth.org/Home.html" class="btn" target="_blank">Website</a>
+                </div>
+
+                <div class="image">
+                <img src="./doctorHomePics/contact.png">
+               </div>
+
+            </div>
+
+        </section>
+
+        <!---------------contact section ends---------------->
+
+        <!--------------footer section start------------------>
+
+        <section class="footer">
+
+            <div class="credit">Maryem Zyada</div>
+
+        </section>
+        <!--------------footer section ends----------------->
+
+    </body>
+    
+</html>

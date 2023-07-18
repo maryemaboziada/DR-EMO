@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Table</title>
+
+    <link rel="stylesheet" type="text/css" href="table.css">
+
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+    * {
+
+        margin: 0;
+
+        padding: 0;
+
+        font-family: 'Poppins', sans-serif;
+
+        box-sizing: border-box;
+
+    }
+
+    body {
+
+        height: 100vh;
+
+        display: grid;
+
+        place-items: center;
+
+        background:  url(doctorHomePics/banner-bg.png) no-repeat fixed;
+
+        background-size: 100% 100%;
+
+        background-repeat: no-repeat;
+
+        font-family: 'Poppins', sans-serif;
+
+        font-weight: 500;
+
+    }
+
+    h1{
+        color: rgb(209, 166, 250);
+
+        font-style: oblique;
+
+        margin-top: 40px;
+
+        font-weight: 600;
+    }
+
+    table {
+
+        width: 60%;
+
+        box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
+
+        margin-top: 30px;
+
+        margin-bottom: 30px;
+
+        border-radius: 15px;
+
+    }
+
+    table,
+    td,
+    th {
+
+        padding: 20px;
+
+        border: 1px solid lightgray;
+
+        border-collapse: collapse;
+
+        text-align: center;
+
+        cursor: pointer;
+
+    }
+
+    td {
+
+        font-size: 18px;
+
+    }
+
+    th {
+
+        background-color: rgb(255, 255, 255);
+
+        color: rgb(0, 0, 0);
+
+    }
+
+    .one{
+        color: rgb(255, 255, 255);
+        background-color: rgb(189, 117, 23);
+    }
+
+    .one:hover{
+        background-color: rgb(150, 104, 44);
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+    }
+
+    .two{
+        color: white;
+        background-color: rgb(119, 111, 111);
+    }
+
+    .two:hover{
+        background-color: rgb(163, 125, 125);
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+    }
+
+
+    td:nth-child(odd) {
+        background-color: rgb(151, 102, 62);
+        color: white;
+
+    }
+
+    td:nth-child(odd):hover {
+
+        background-color: rgb(247, 179, 90);;
+
+        color: white;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+
+    }
+
+    td:nth-child(even) {
+
+        background-color: rgb(83, 82, 78);
+        color: white;
+
+    }
+
+    td:nth-child(even):hover {
+
+        background-color: rgb(35, 34, 36);;
+
+        transform: scale(1.5);
+
+        transition: transform 300ms ease-in;
+
+
+    }
+</style>
+
+<body>
+
+</body>
+     
+    <h1>Patients Data</h1>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Mahmoud Ahmed Abdo Saad</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Cancer</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Uninficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Redius Main</td>
+
+            <td>--</td>
+
+            <td>Texture Mean</td>
+
+            <td>--</td>
+
+            <td>Perimeter Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Area Mean</td>
+
+            <td>--</td>
+
+            <td>Smoothness Mean</td>
+
+            <td>--</td>
+
+            <td>Compactness Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concavity Mean</td>
+
+            <td>--</td>
+
+            <td>Concave Points Mean</td>
+
+            <td>--</td>
+
+            <td>Symmetry Mean</td>
+
+            <td>--</td>
+            
+        </tr>
+
+        <tr>
+
+            <td>Fractal Dimensions Mean</td>
+
+            <td>--</td>
+
+            <td>Redius Se</td>
+
+            <td>--</td>
+
+            <td>Texture Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Perimeter Se</td>
+
+            <td>--</td>
+
+            <td>Area Se</td>
+
+            <td>--</td>
+
+            <td>Smoothness Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Compactness Se</td>
+
+            <td>--</td>
+
+            <td>Concavity Se</td>
+
+            <td>--</td>
+
+            <td>Concave Points Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Symmetry Se</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Se</td>
+
+            <td>--</td>
+
+            <td>Redius Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Texture Worst</td>
+
+            <td>--</td>
+
+            <td>Perimeter Worst</td>
+
+            <td>--</td>
+
+            <td>Area Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Smoothness Worst</td>
+
+            <td>--</td>
+
+            <td>Compactness Worst</td>
+
+            <td>--</td>
+
+            <td>Concavity Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concave Points Worst</td>
+
+            <td>--</td>
+
+            <td>Symmetry Worst</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+    </table>
+
+    <!------------------------------------------------------second table------------------------------------------------------>
+
+    <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Layla gamal Abdo ahmed</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Cancer</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">inficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Redius Main</td>
+
+            <td>--</td>
+
+            <td>Texture Mean</td>
+
+            <td>--</td>
+
+            <td>Perimeter Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Area Mean</td>
+
+            <td>--</td>
+
+            <td>Smoothness Mean</td>
+
+            <td>--</td>
+
+            <td>Compactness Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concavity Mean</td>
+
+            <td>--</td>
+
+            <td>Concave Points Mean</td>
+
+            <td>--</td>
+
+            <td>Symmetry Mean</td>
+
+            <td>--</td>
+            
+        </tr>
+
+        <tr>
+
+            <td>Fractal Dimensions Mean</td>
+
+            <td>--</td>
+
+            <td>Redius Se</td>
+
+            <td>--</td>
+
+            <td>Texture Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Perimeter Se</td>
+
+            <td>--</td>
+
+            <td>Area Se</td>
+
+            <td>--</td>
+
+            <td>Smoothness Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Compactness Se</td>
+
+            <td>--</td>
+
+            <td>Concavity Se</td>
+
+            <td>--</td>
+
+            <td>Concave Points Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Symmetry Se</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Se</td>
+
+            <td>--</td>
+
+            <td>Redius Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Texture Worst</td>
+
+            <td>--</td>
+
+            <td>Perimeter Worst</td>
+
+            <td>--</td>
+
+            <td>Area Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Smoothness Worst</td>
+
+            <td>--</td>
+
+            <td>Compactness Worst</td>
+
+            <td>--</td>
+
+            <td>Concavity Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concave Points Worst</td>
+
+            <td>--</td>
+
+            <td>Symmetry Worst</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+    </table>
+
+     <!------------------------------------------------------third table------------------------------------------------------>
+
+     <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two">Gamal Ahmed Mohamed Ali</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Cancer</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">inficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Redius Main</td>
+
+            <td>--</td>
+
+            <td>Texture Mean</td>
+
+            <td>--</td>
+
+            <td>Perimeter Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Area Mean</td>
+
+            <td>--</td>
+
+            <td>Smoothness Mean</td>
+
+            <td>--</td>
+
+            <td>Compactness Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concavity Mean</td>
+
+            <td>--</td>
+
+            <td>Concave Points Mean</td>
+
+            <td>--</td>
+
+            <td>Symmetry Mean</td>
+
+            <td>--</td>
+            
+        </tr>
+
+        <tr>
+
+            <td>Fractal Dimensions Mean</td>
+
+            <td>--</td>
+
+            <td>Redius Se</td>
+
+            <td>--</td>
+
+            <td>Texture Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Perimeter Se</td>
+
+            <td>--</td>
+
+            <td>Area Se</td>
+
+            <td>--</td>
+
+            <td>Smoothness Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Compactness Se</td>
+
+            <td>--</td>
+
+            <td>Concavity Se</td>
+
+            <td>--</td>
+
+            <td>Concave Points Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Symmetry Se</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Se</td>
+
+            <td>--</td>
+
+            <td>Redius Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Texture Worst</td>
+
+            <td>--</td>
+
+            <td>Perimeter Worst</td>
+
+            <td>--</td>
+
+            <td>Area Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Smoothness Worst</td>
+
+            <td>--</td>
+
+            <td>Compactness Worst</td>
+
+            <td>--</td>
+
+            <td>Concavity Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concave Points Worst</td>
+
+            <td>--</td>
+
+            <td>Symmetry Worst</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+    </table>
+
+     <!------------------------------------------------------forth table------------------------------------------------------>
+
+     <table>
+
+        <tr>
+
+            <th class="one">Patient Name</th>
+
+            <th class="two"> Hend Ali Ahmed Saaid</th>
+
+            <th class="one">Disease</th>
+
+            <th class="two">Cancer</th>
+
+            <th class="one">Status</th>
+
+            <th class="two">Uninficted</th>
+
+        </tr>
+
+        <tr>
+
+            <td>Redius Main</td>
+
+            <td>--</td>
+
+            <td>Texture Mean</td>
+
+            <td>--</td>
+
+            <td>Perimeter Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Area Mean</td>
+
+            <td>--</td>
+
+            <td>Smoothness Mean</td>
+
+            <td>--</td>
+
+            <td>Compactness Mean</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concavity Mean</td>
+
+            <td>--</td>
+
+            <td>Concave Points Mean</td>
+
+            <td>--</td>
+
+            <td>Symmetry Mean</td>
+
+            <td>--</td>
+            
+        </tr>
+
+        <tr>
+
+            <td>Fractal Dimensions Mean</td>
+
+            <td>--</td>
+
+            <td>Redius Se</td>
+
+            <td>--</td>
+
+            <td>Texture Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Perimeter Se</td>
+
+            <td>--</td>
+
+            <td>Area Se</td>
+
+            <td>--</td>
+
+            <td>Smoothness Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Compactness Se</td>
+
+            <td>--</td>
+
+            <td>Concavity Se</td>
+
+            <td>--</td>
+
+            <td>Concave Points Se</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Symmetry Se</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Se</td>
+
+            <td>--</td>
+
+            <td>Redius Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Texture Worst</td>
+
+            <td>--</td>
+
+            <td>Perimeter Worst</td>
+
+            <td>--</td>
+
+            <td>Area Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Smoothness Worst</td>
+
+            <td>--</td>
+
+            <td>Compactness Worst</td>
+
+            <td>--</td>
+
+            <td>Concavity Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Concave Points Worst</td>
+
+            <td>--</td>
+
+            <td>Symmetry Worst</td>
+
+            <td>--</td>
+
+            <td>Fractal Dimensions Worst</td>
+
+            <td>--</td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

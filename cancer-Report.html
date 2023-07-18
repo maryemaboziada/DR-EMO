@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repeort</title>
+   
+    <!------------ fonts ---------------->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/fontawesome.min.js">
+</head>
+
+<!-------------------------------------style------------------------------------->
+
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: url(patientHomePics/banner-bg.png) no-repeat;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+    }
+    
+    .container {
+        background: linear-gradient(rgb(110, 63, 165) , rgba(172, 159, 159, 0.582));
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 6px;
+    }
+    
+    .container .main-title {
+        font-size: 30px;
+        margin: 20px auto;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(233, 233, 233);
+    }
+    
+    .container table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 5px;
+    }
+    
+    .container table td {
+        border: 1px solid;
+        padding: 5px;
+    }
+    
+    .container .info-title,
+    .container .history-title {
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .history-title{
+        color: rgb(243, 242, 242);
+        font-weight: 600;
+        font-size: 25px;
+    }
+    
+    .info-title{
+        color: rgb(209, 206, 202);
+        font-weight: 600;
+        font-size: 25px;
+    }
+    
+    .print-btn {
+        margin: 10px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+    }
+    
+    .print-btn input {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(121, 90, 43);
+        cursor: pointer;
+        border: none;
+        transition: 0.5s;
+    }
+    
+    .print-btn input:hover{
+        color: black;
+        letter-spacing: .2rem;
+        background-color: antiquewhite;
+    }
+    
+    @media print {
+        .print-btn input {
+            visibility: hidden;
+        }
+    }
+    @media  (max-width:991px) {
+        .container{
+            width: 90%;
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+        }
+        
+        body{
+            background: url(patientHomePics/banner-bg.png) fixed;
+        }
+    }
+
+</style>
+
+<!--------------------------body---------------------------------->
+
+<body>
+
+    <div class="container">
+
+        <hr>
+
+        <div class="main-title">DR EMO Report</div>
+
+        <table class="general-table">
+
+            <tr>
+                <td>Request Date: 22/12/2023</td>
+            </tr>
+
+            <tr>
+                <td>Desease: Cancer</td>
+            </tr>
+
+            <tr>
+                <td>Result: Infected</td>
+            </tr>
+
+        </table>
+
+        <div class="info-title">Patient Informations</div>
+
+        <table class="info-table">
+
+            <tr>
+                <td>Patient Name: Ahmed Hassan</td>
+                <td>Date of Birth: 1/10/1978</td>
+            </tr>
+
+            <tr>
+                <td>Sex: Male</td>
+                <td>Contact Number: 01127639810</td>
+            </tr>
+
+            <tr>
+                <td>Address: Haram</td>
+                <td>Email: Amhed33@yahoo.com</td>
+            </tr>
+
+        </table>
+
+        <div class="history-title">Medical History</div>
+
+        <table class="history-table">
+
+            <tr>
+                <td>Redius Main: ---</td>
+                <td> Texture Mean: ---</td>
+            </tr>
+
+            <tr>
+                <td>Perimeter Mean: ---</td>
+                <td>Area Mean: ---</td>
+            </tr>
+
+            <tr>
+                <td>Smoothness Mean: ---</td>
+                <td>Compactness Mean: ---</td>
+            </tr>
+
+            <tr>
+                <td>Concavity Mean: ---</td>
+                <td>Concave Points Mean: ---</td>
+            </tr>
+
+            <tr>
+                <td>Symmetry Mean: ---</td>
+                <td>Fractal Dimensions Mean: ---</td>
+            </tr>
+
+            <tr>
+                <td>Redius Se: ---</td>
+                <td>Texture Se: ---</td>
+            </tr>
+
+            <tr>
+                <td>Perimeter Se: ---</td>
+                <td>Area Se: ---</td>
+            </tr>
+
+            <tr>
+                <td>Smoothness Se: ---</td>
+                <td>Compactness Se: ---</td>
+            </tr>
+
+            <tr>
+                <td>Concavity Se: ---</td>
+                <td>Concave Points Se: ---</td>
+            </tr>
+
+            <tr>
+                <td>Symmetry Se: ---</td>
+                <td>Fractal Dimensions Se: ---</td>
+            </tr>
+
+            <tr>
+                <td>Redius Worst: ---</td>
+                <td>Texture Worst: ---</td>
+            </tr>
+
+            <tr>
+                <td>Perimeter Worst: ---</td>
+                <td>Area Worst: ---</td>
+            </tr>
+
+            <tr>
+                <td>Smoothness Worst: ---</td>
+                <td>Compactness Worst: ---</td>
+            </tr>
+
+            <tr>
+                <td>Concavity Worst: ---</td>
+                <td>Concave Points Worst: ---</td>
+            </tr>
+
+            <tr>
+                <td>Symmetry Worst: ---</td>
+                <td>Fractal Dimensions Worst: ---</td>
+            </tr>
+
+        </table>
+
+        <div class="print-btn">
+            <input type="button" value="Print Report" onclick="window.print();return false;">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
